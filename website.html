@@ -1,0 +1,272 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Basic page setup -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!-- SEO -->
+  <title>Acme — Modern, Accessible, Responsive Web Page</title>
+  <meta name="description" content="A single-file example HTML page demonstrating best practices: accessibility, responsiveness, SEO, performance, and interactivity.">
+  <meta name="keywords" content="HTML, Accessibility, Responsive, SEO, Example">
+
+  <!-- Open Graph / Social preview -->
+  <meta property="og:title" content="Acme — Modern Web Page Example">
+  <meta property="og:description" content="A single-file example HTML page demonstrating best practices: accessibility, responsiveness, SEO, performance, and interactivity.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Acme+Preview">
+  <meta property="og:url" content="https://example.com/complete-webpage.html">
+
+  <!-- Structured data (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Acme Example",
+    "url": "https://example.com",
+    "logo": "https://via.placeholder.com/200x60.png?text=Acme+Logo"
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Critical CSS (small demo) -->
+  <style>
+    :root{--brand:#0066cc;--muted:#6b7280;--radius:12px}
+    html,body{height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.5;color:#0f172a}
+    body{margin:0;display:flex;flex-direction: }
+    a{color:var(--brand);text-decoration:none}
+    header{background:linear-gradient(180deg,#ffffffcc, #f3f4f6);:saturate(120%) blur(4px);box-shadow:0 1px 0 rgba(0,0,0,.04)}
+    .container{max-width:1100px;margin:0 auto;padding:1rem}
+    .nav{display:flex;align-items:center;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.5rem;font-weight:700}
+    .brand img{width:36px;height:36px;border-radius:8px}
+    nav ul{list-style:none;margin:0;padding:0;display:flex;gap:.75rem}
+    button.hamburger{display:none}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:1.5rem;align-items:center;padding:2rem 0}
+    .hero h1{font-size:clamp(1.6rem,3.6vw,2.6rem);margin:0}
+    .cta{display:flex;gap:.5rem;margin-top:1rem}
+
+    /* Features grid */
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;margin:2rem 0}
+    .card{padding:1rem;border-radius:var(--radius);background:#fff;box-shadow:0 6px 18px rgba(12,18,28,.06)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.5rem}
+    .gallery img{width:100%;height:140px;object-fit:cover;border-radius:8px}
+
+    /* Footer */
+    footer{margin-top:auto;background:#0b1220;color:#fff;padding:1.5rem 0}
+    footer a{color:#cfe8ff}
+
+    /* Responsive */
+    @media (max-width:880px){
+      .hero{grid-template-columns:1fr;}
+      nav ul{display:none}
+      button.hamburger{display:inline-block}
+    }
+
+    /* Accessibility helpers */
+    .skip-link{position:absolute;left:-999px;top:auto;width:1px;height:1px;overflow:hidden}
+    .skip-link:focus{position:static;width:auto;height:auto;clip:auto;padding:.5rem;background:#fff;border:2px solid var(--brand);margin:.5rem}
+
+    /* Small utilities */
+    .muted{color:var(--muted);font-size:.95rem}
+    form .row{display:flex;gap:.5rem}
+    input,textarea,select{font:inherit;padding:.5rem;border:1px solid #e6e9ee;border-radius:8px}
+    button.primary{background:var(--brand);color:#fff;border:none;padding:.6rem .9rem;border-radius:8px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+    /* Simple modal */
+    .modal{position:fixed;inset:0;display:none;place-items:center;background:rgba(2,6,23,.5);z-index:60}
+    .modal[open]{display:grid}
+    .modal-dialog{background:#fff;padding:1rem;border-radius:12px;max-width:560px;width:calc(100% - 2rem)}
+  </style>
+</head>
+<body>
+  <!-- Skip link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header role="banner">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;">
+      <div class="nav" aria-label="Primary">
+        <a class="brand" href="#">
+          <img alt="Acme logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230066cc'%3E%3C/rect%3E%3Ctext x='50' y='62' font-size='50' fill='white' text-anchor='middle' font-family='Arial'>A</text%3E%3C/svg%3E">
+          <span>Acme</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:.5rem">
+        <button class="hamburger" aria-label="Open menu" onclick="toggleMobileNav()">☰</button>
+        <a href="#contact" class="primary-link">Get in touch</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1" class="container">
+    <!-- Hero -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div>
+        <p class="muted">Trusted by designers & developers</p>
+        <h1 id="hero-heading">A modern, accessible, and responsive HTML template</h1>
+        <p class="muted">This single-file example includes semantic markup, microdata, responsive layout, ARIA attributes, and small JS for progressive enhancement.</p>
+        <div class="cta">
+          <a role="button" class="primary" href="#contact" style="padding:.6rem .9rem;border-radius:8px;background:var(--brand);color:#fff">Start free</a>
+          <a href="#features" class="muted" style="align-self:center">Explore features →</a>
+        </div>
+
+        <!-- Newsletter form (accessible, with client-side validation + progressive enhancement) -->
+        <form id="newsletter" onsubmit="subscribe(event)" style="margin-top:1.25rem;display:flex;gap:.5rem;flex-wrap:wrap;align-items:center">
+          <label for="email" class="sr-only">Email address</label>
+          <input id="email" name="email" type="email" placeholder="Your email" required aria-required="true" />
+          <button class="primary" type="submit">Subscribe</button>
+        </form>
+
+      </div>
+
+      <aside aria-label="Product preview" style="padding:1rem;">
+        <div class="card" role="img" aria-label="Preview mockup">
+          <img src="https://via.placeholder.com/400x300.png?text=Preview" alt="Product preview" style="width:100%;border-radius:8px;max-height:260px;object-fit:cover;" loading="lazy">
+        </div>
+      </aside>
+    </section>
+
+    <!-- Features -->
+    <section id="features" aria-labelledby="features-heading">
+      <h2 id="features-heading">Key features</h2>
+      <p class="muted">Picked to show many characteristics of a robust web page.</p>
+      <div class="features">
+        <article class="card" aria-labelledby="f1">
+          <h3 id="f1">Semantic HTML</h3>
+          <p class="muted">Clean use of header, main, nav, section, article and footer tags improves clarity for browsers and assistive tech.</p>
+        </article>
+        <article class="card" aria-labelledby="f2">
+          <h3 id="f2">Accessibility</h3>
+          <p class="muted">Keyboard focus, ARIA labels, contrast, and skip-links help users of all abilities.</p>
+        </article>
+        <article class="card" aria-labelledby="f3">
+          <h3 id="f3">Performance</h3>
+          <p class="muted">Lazy loading images, minimal CSS, and progressive enhancement reduce load time.</p>
+        </article>
+        <article class="card" aria-labelledby="f4">
+          <h3 id="f4">SEO & Social</h3>
+          <p class="muted">Meta tags, Open Graph, and structured data allow better search and social previews.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Gallery (images use lazy loading) -->
+    <section id="gallery" aria-labelledby="gallery-heading">
+      <h2 id="gallery-heading">Gallery</h2>
+      <p class="muted">A responsive gallery demonstrates grid layout and image handling.</p>
+      <div class="gallery" role="list">
+        <img role="listitem" src="https://picsum.photos/400/300?random=1" alt="Sample image 1" loading="lazy">
+        <img role="listitem" src="https://picsum.photos/400/300?random=2" alt="Sample image 2" loading="lazy">
+        <img role="listitem" src="https://picsum.photos/400/300?random=3" alt="Sample image 3" loading="lazy">
+        <img role="listitem" src="https://picsum.photos/400/300?random=4" alt="Sample image 4" loading="lazy">
+      </div>
+    </section>
+
+    <!-- Pricing table -->
+    <section id="pricing" aria-labelledby="pricing-heading">
+      <h2 id="pricing-heading">Pricing</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;margin-top:1rem">
+        <div class="card" aria-labelledby="p1"><h3 id="p1">Free</h3><p class="muted">Good for personal use</p><p><strong>$0</strong>/mo</p></div>
+        <div class="card" aria-labelledby="p2"><h3 id="p2">Pro</h3><p class="muted">For professionals</p><p><strong>$12</strong>/mo</p></div>
+        <div class="card" aria-labelledby="p3"><h3 id="p3">Business</h3><p class="muted">Teams and scale</p><p><strong>$39</strong>/mo</p></div>
+      </div>
+    </section>
+
+    <!-- Contact form with progressive enhancement + client-side validation -->
+    <section id="contact" aria-labelledby="contact-heading" style="margin-top:2rem">
+      <h2 id="contact-heading">Contact us</h2>
+      <form id="contact-form" action="#" onsubmit="handleContact(event)" novalidate>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:.5rem">
+          <label>
+            <span class="sr-only">First name</span>
+            <input name="first" placeholder="First name" required>
+          </label>
+          <label>
+            <span class="sr-only">Last name</span>
+            <input name="last" placeholder="Last name">
+          </label>
+        </div>
+        <div style="margin-top:.5rem">
+          <label class="sr-only">Message</label>
+          <textarea name="message" placeholder="How can we help?" rows="5" required></textarea>
+        </div>
+        <div style="display:flex;gap:.5rem;margin-top:.5rem">
+          <button class="primary" type="submit">Send message</button>
+          <button type="button" onclick="openModal()">Open demo modal</button>
+        </div>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- Modal demo (keyboard accessible) -->
+  <div id="demo-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-dialog">
+      <h3 id="modal-title">Demo modal</h3>
+      <p class="muted">This modal is focus-trapped and can be dismissed with Esc or the close button.</p>
+      <div style="display:flex;gap:.5rem;justify-content:flex-end;margin-top:1rem">
+        <button onclick="closeModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <footer role="contentinfo">
+    <div class="container" style="display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap">
+      <div>
+        <strong>Acme Example</strong>
+        <p class="muted">© <span id="year"></span> — Built with HTML best practices.</p>
+      </div>
+      <nav aria-label="Footer navigation">
+        <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Minimal JS for interactivity and progressive enhancement -->
+  <script>
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Newsletter subscribe (fake) — progressive enhancement: server should handle POST when present
+    function subscribe(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      if(!email || !email.includes('@')){alert('Please enter a valid email.');return}
+      alert('Thanks! We would send a confirmation to ' + email + '. (Demo)');
+      e.target.reset();
+    }
+
+    // Contact handler — client validation and demonstration
+    function handleContact(e){
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+      if(!data.get('first') || !data.get('message')){alert('Please fill required fields.');return}
+      // Simulate an async send (in real site, use fetch POST to server)
+      alert('Message sent — demo only.');
+      form.reset();
+    }
+
+    // Mobile nav toggle (simple)
+    function toggleMobileNav(){
+    const ul = document.querySelector('nav ul');
+    if(!ul) return;
+ul.style.display = (
