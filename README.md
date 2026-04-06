@@ -8,7 +8,7 @@ A clean, modern, and fully responsive HTML template built with **best practices 
 
 ## 🚀 Live Demo
 
-👉 https://69d410eb3ec331f955133da5--gleeful-entremet-f9f1f7.netlify.app/
+👉 
 
 ---
 
@@ -100,7 +100,7 @@ open website.html
 4. Save
 
 Your site will be live at:
-👉 https://69d410eb3ec331f955133da5--gleeful-entremet-f9f1f7.netlify.app/
+👉 
 
 ---
 
