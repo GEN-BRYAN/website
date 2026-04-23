@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <link rel="stylesheet" href="all.css">
+    <link rel="stylesheet" href="ALL.js">
+</head>
+<style>
+    footer{
+        bottom: 0;
+        left: 0;
+        right: 0;
+        position: static;
+    }
+</style>
+<body>
+      <!-- ── Header ── -->
+  <header role="banner">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:1.25rem;">
+        <a class="brand" href="#" aria-label="Acme home">
+          <img
+            alt="Acme logo"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230055b3'/%3E%3Ctext x='50' y='65' font-size='52' fill='white' text-anchor='middle' font-family='Georgia,serif' font-style='italic'%3EA%3C/text%3E%3C/svg%3E"
+          >
+          <span>Acme</span>
+        </a>
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="featuers.html">Features</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:.6rem;">
+        <button class="hamburger secondary" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" onclick="toggleMobileNav(this)">☰ Menu</button>
+        <a href="contact.html" class="btn btn-primary" style="font-size:.88rem;padding:.5rem .95rem;border-radius:8px;">Get in touch</a>
+      </div>
+    </div>
+
+    <!-- Mobile nav drawer -->
+    <div id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+      <a href="featuers.html" onclick="closeMobileNav()">Features</a>
+      <a href="gallery.html"  onclick="closeMobileNav()">Gallery</a>
+      <a href="pricing.html"  onclick="closeMobileNav()">Pricing</a>
+      <a href="reviews.html" onclick="closeMobileNav()">Reviews</a>
+      <a href="contact.html"  onclick="closeMobileNav()">Contact</a>
+    </div>
+  </header>
+
+     <!-- Contact -->
+     <section id="contact" aria-labelledby="contact-heading" style="padding-bottom:3.5rem;">
+        <h2 id="contact-heading">Contact us</h2>
+        <div class="contact-grid">
+  
+          <div class="contact-info">
+            <h3>We'd love to hear from you</h3>
+            <p>Whether you have a question, a project in mind, or just want to say hello — fill in the form and we'll be in touch within 24 hours.</p>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📧</span>
+              <div class="contact-item-text">
+                <strong>Email</strong>
+                <span>ihirweenzo@yahoo.com/bryantonyrwemaganza@gmail.com</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📞</span>
+              <div class="contact-item-text">
+                <strong>Phone</strong>
+                <span>+250 795 260 992</span>
+              </div>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon" aria-hidden="true">📍</span>
+              <div class="contact-item-text">
+                <strong>Office</strong>
+                <span>250 Main St, Gicumbi, SAINT LAURENT</span>
+              </div>
+            </div>
+          </div>
+  
+          <form id="contact-form" action="#" onsubmit="handleContact(event)" novalidate aria-label="Contact form">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="cf-first">First name <span aria-hidden="true" style="color:var(--accent)">*</span></label>
+                <input id="cf-first" name="first" type="text" placeholder="Jane" required aria-required="true" autocomplete="given-name">
+              </div>
+              <div class="form-group">
+                <label for="cf-last">Last name</label>
+                <input id="cf-last" name="last" type="text" placeholder="Doe" autocomplete="family-name">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email <span aria-hidden="true" style="color:var(--accent)">*</span></label>
+              <input id="cf-email" name="email" type="email" placeholder="jane@example.com" required aria-required="true" autocomplete="email">
+            </div>
+            <div class="form-group">
+              <label for="cf-subject">Subject</label>
+              <select id="cf-subject" name="subject" aria-label="Select a subject">
+                <option value="">Select a subject…</option>
+                <option value="sales">Sales enquiry</option>
+                <option value="support">Technical support</option>
+                <option value="billing">Billing question</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message <span aria-hidden="true" style="color:var(--accent)">*</span></label>
+              <textarea id="cf-message" name="message" placeholder="How can we help?" rows="5" required aria-required="true"></textarea>
+            </div>
+            <div class="form-actions">
+              <button class="primary" type="submit">Send message</button>
+              <button type="button" class="secondary" onclick="openModal()">Open demo modal</button>
+            </div>
+            <div id="contact-msg" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+  
+    </main>
+  
+    <!-- ── Modal ── -->
+    <div id="demo-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-dialog">
+        <h3 id="modal-title">✨ Demo modal</h3>
+        <p class="muted">This modal is focus-trapped and keyboard accessible. Press <kbd>Esc</kbd> or the close button to dismiss.</p>
+        <p style="font-size:.88rem;margin-top:.5rem;">In a real application, this could contain a sign-up flow, a media preview, or a confirmation dialog.</p>
+        <div class="modal-footer">
+          <button class="secondary" onclick="closeModal()">Cancel</button>
+          <button class="primary" onclick="closeModal()">Got it</button>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Toast notification -->
+    <div id="toast" role="status" aria-live="polite" aria-atomic="true"></div><br>
+    
+    
+</body>
+<!-- ── Footer ── -->
+<footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Acme</div>
+          <p class="footer-desc">A single-file HTML reference showcasing accessibility, responsive design, SEO best practices, and progressive enhancement.</p>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="featuers.html">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> BRYTON AND MASTON DESIGN © COPYRIGHT 2026</p>
+        <nav aria-label="Footer social links">
+          <a href="#">Twitter</a> · <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</html>
