@@ -100,7 +100,7 @@ open website.html
 4. Save
 
 Your site will be live at:
-👉 https://69d421425f714f5f0875e85d--acme-bryton-maston.netlify.app
+👉 https://git-bryton-maston.netlify.app/
 
 ---
 
