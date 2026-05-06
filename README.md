@@ -8,7 +8,7 @@ A clean, modern, and fully responsive HTML template built with **best practices 
 
 ## 🚀 Live Demo
 
-👉 https://69d421425f714f5f0875e85d--acme-bryton-maston.netlify.app
+👉 https://gen-bit-get-bryan.netlify.app/
 
 ---
 
@@ -56,7 +56,7 @@ Most developers waste hours:
 
 ## 📸 Preview
 
-![Preview](https://via.placeholder.com/1200x630.png?text=Acme+Preview)
+![Preview](https://gen-bit-get-bryan.netlify.app/)
 
 ---
 
