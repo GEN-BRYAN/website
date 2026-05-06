@@ -119,11 +119,16 @@ html,body{
 .how-we-help ul{ margin:0; padding-left:1.1rem; color:var(--muted); }
 
 /* Footer */
-.site-footer{ background:#0b1220; color:#dbeafe; padding:2rem 0; margin-top:2.5rem; }
-.footer-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1.25rem; align-items:start; max-width:var(--container); margin:0 auto; padding:0 1.25rem; }
-.footer-brand{ font-family:"DM Serif Display", Georgia, serif; font-size:1.25rem; font-weight:700; color:#fff; }
-.footer-desc{ color:rgba(219,234,254,0.9); max-width:36ch; }
-.footer-bottom{ display:flex; justify-content:space-between; align-items:center; margin-top:1.25rem; border-top:1px solid rgba(255,255,255,0.04); padding-top:1rem; font-size:.95rem; color:rgba(219,234,254,0.8); max-width:var(--container); margin-left:auto; margin-right:auto; padding-left:1.25rem; padding-right:1.25rem; }
+.site-footer{ background:#0b1220; color:#dbeafe; padding:2rem 0; margin-top:2.5rem; border-top:1px solid rgba(255,255,255,0.02); }
+.footer-inner{ max-width:var(--container); margin:0 auto; padding:0 1.25rem; }
+.footer-grid{ display:grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap:1.25rem; align-items:start; }
+.footer-col{ min-width:0; }
+.footer-brand{ font-family:"DM Serif Display", Georgia, serif; font-size:1.25rem; font-weight:700; color:#fff; margin-bottom:.5rem; }
+.footer-desc{ color:rgba(219,234,254,0.9); max-width:36ch; margin:0; }
+.footer-grid h4{ color:#e6eefc; margin:0 0 .5rem; font-size:1rem; }
+.footer-grid a{ color:rgba(219,234,254,0.9); text-decoration:none; }
+.footer-grid a:hover, .footer-grid a:focus{ text-decoration:underline; }
+.footer-bottom{ display:flex; justify-content:space-between; align-items:center; margin-top:1.25rem; border-top:1px solid rgba(255,255,255,0.04); padding-top:1rem; font-size:.95rem; color:rgba(219,234,254,0.8); }
 
 /* Mobile nav */
 .mobile-nav{ display:none; position:fixed; right:0; top:64px; width:100%; max-width:320px; background:#fff; border-left:1px solid rgba(2,6,23,0.06); box-shadow:0 8px 30px rgba(2,6,23,0.12); padding:1rem; z-index:60; transform:translateX(100%); transition:transform .22s ease; }
@@ -138,6 +143,7 @@ a:focus, button:focus, input:focus, select:focus, textarea:focus{ outline:3px so
   .main-nav{ display:none; }
   .mobile-nav{ top:56px; }
   .about{ padding:1rem; }
+  .footer-bottom{ flex-direction:column; gap:.6rem; align-items:flex-start; }
 }
 
 @media (max-width:640px){
