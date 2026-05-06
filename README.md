@@ -8,7 +8,7 @@ A clean, modern, and fully responsive HTML template built with **best practices 
 
 ## 🚀 Live Demo
 
-👉 https://gen-bit-get-bryan.netlify.app/
+👉 https://git-bryton-maston.netlify.app/
 
 ---
 
@@ -56,7 +56,7 @@ Most developers waste hours:
 
 ## 📸 Preview
 
-![Preview](https://gen-bit-get-bryan.netlify.app/)
+![Preview](https://git-bryton-maston.netlify.app/)
 
 ---
 
