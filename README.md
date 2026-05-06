@@ -89,21 +89,6 @@ open website.html
 
 ---
 
-## 🌍 Go Live (2 minutes)
-
-1. Push your changes
-2. Go to repository **Settings → Pages**
-3. Select:
-
-   * Branch: `main`
-   * Folder: `/root`
-4. Save
-
-Your site will be live at:
-👉 https://git-bryton-maston.netlify.app/
-
----
-
 ## 📈 Who This Is For
 
 * Developers building landing pages
