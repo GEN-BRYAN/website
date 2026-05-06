@@ -54,13 +54,6 @@ Most developers waste hours:
 
 ---
 
-## 📸 Preview
-
-![Preview](https://git-bryton-maston.netlify.app/) 
-<a src="https://git-bryton-maston.netlify.app/">
-
----
-
 ## 📁 Project Structure
 
 ```
