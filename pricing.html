@@ -1,151 +1,180 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Acme — Pricing</title>
+
+  <meta name="description" content="Simple, transparent pricing for Acme — Free, Pro, and Business plans." />
+
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="pricing.css">
 </head>
-<link rel="stylesheet" href="all.css">
-<link rel="stylesheet" href="ALL.js">
-<style>
-    footer{
-        bottom: 0;
-        left: 0;
-        right: 0;
-        position: static;
-    }
-</style>
 <body>
-    
-      <!-- ── Header ── -->
-      <header role="banner">
-        <div class="header-inner">
-          <div style="display:flex;align-items:center;gap:1.25rem;">
-            <a class="brand" href="#" aria-label="Acme home">
-              <img
-                alt="Acme logo"
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230055b3'/%3E%3Ctext x='50' y='65' font-size='52' fill='white' text-anchor='middle' font-family='Georgia,serif' font-style='italic'%3EA%3C/text%3E%3C/svg%3E"
-              >
-              <span>Acme</span>
-            </a>
-            <nav aria-label="Main navigation">
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="featuers.html">Features</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-    
-          <div style="display:flex;align-items:center;gap:.6rem;">
-            <button class="hamburger secondary" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" onclick="toggleMobileNav(this)">☰ Menu</button>
-            <a href="contact.html" class="btn btn-primary" style="font-size:.88rem;padding:.5rem .95rem;border-radius:8px;">Get in touch</a>
-          </div>
-        </div>
-    
-        <!-- Mobile nav drawer -->
-        <div id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">
-          <a href="featuers.html" onclick="closeMobileNav()">Features</a>
-          <a href="gallery.html"  onclick="closeMobileNav()">Gallery</a>
-          <a href="pricing.html"  onclick="closeMobileNav()">Pricing</a>
-          <a href="reviews.html" onclick="closeMobileNav()">Reviews</a>
-          <a href="contact.html"  onclick="closeMobileNav()">Contact</a>
-        </div>
-      </header>
 
-   <!-- Pricing -->
-   <section id="pricing" aria-labelledby="pricing-heading">
-    <h2 id="pricing-heading">Simple, transparent pricing</h2>
-    <p class="muted">No hidden fees. Cancel any time.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card" aria-labelledby="p1">
-        <h3 id="p1">Free</h3>
-        <div class="price">$0 <span>/ mo</span></div>
-        <p class="muted" style="font-size:.85rem;">Perfect for personal projects</p>
-        <ul class="pricing-features">
-          <li>3 projects</li>
-          <li>5 GB storage</li>
-          <li>Community support</li>
-        </ul>
-        <a href="contact.html" class="btn" style="display:block;text-align:center;background:var(--brand-light);color:var(--brand);font-weight:600;font-size:.88rem;padding:.55rem;border-radius:8px;">Get started</a>
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header -->
+  <header role="banner" class="site-header">
+    <div class="header-inner container">
+      <div class="brand-and-nav">
+        <a class="brand" href="index.html" aria-label="Acme home">
+          <img alt="Acme logo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230055b3'/%3E%3Ctext x='50' y='65' font-size='52' fill='white' text-anchor='middle' font-family='Georgia,serif' font-style='italic'%3EA%3C/text%3E%3C/svg%3E">
+          <span class="brand-text">Acme</span>
+        </a>
+
+        <nav aria-label="Main navigation" class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="featuers.html">Features</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="pricing.html" aria-current="page">Pricing</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
       </div>
 
-      <div class="pricing-card featured" aria-labelledby="p2">
-        <span class="featured-badge">Most popular</span>
-        <h3 id="p2">Pro</h3>
-        <div class="price">$12 <span>/ mo</span></div>
-        <p class="muted" style="font-size:.85rem;">For professionals &amp; freelancers</p>
-        <ul class="pricing-features">
-          <li>Unlimited projects</li>
-          <li>50 GB storage</li>
-          <li>Priority support</li>
-          <li>Custom domains</li>
-        </ul>
-        <a href="contact.html" class="btn btn-primary" style="display:block;text-align:center;font-size:.88rem;padding:.55rem;">Start free trial</a>
-      </div>
-
-      <div class="pricing-card" aria-labelledby="p3">
-        <h3 id="p3">Business</h3>
-        <div class="price">$39 <span>/ mo</span></div>
-        <p class="muted" style="font-size:.85rem;">Teams and scale</p>
-        <ul class="pricing-features">
-          <li>Unlimited everything</li>
-          <li>500 GB storage</li>
-          <li>SLA guarantee</li>
-          <li>SSO / SAML</li>
-          <li>Dedicated manager</li>
-        </ul>
-        <a href="contact.html" class="btn" style="display:block;text-align:center;background:var(--brand-light);color:var(--brand);font-weight:600;font-size:.88rem;padding:.55rem;border-radius:8px;">Contact sales</a>
+      <div class="header-actions">
+        <button id="hamburger" class="hamburger secondary" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">☰ Menu</button>
+        <a href="contact.html" class="btn btn-primary">Get in touch</a>
       </div>
     </div>
-  </section>
 
-     <!-- ── Footer ── -->
-     <footer role="contentinfo">
-        <div class="container">
-          <div class="footer-grid">
-            <div>
-              <div class="footer-brand">Acme</div>
-              <p class="footer-desc">A single-file HTML reference showcasing accessibility, responsive design, SEO best practices, and progressive enhancement.</p>
-            </div>
-            <div>
-              <h4>Product</h4>
-              <ul>
-                <li><a href="featuers.html">Features</a></li>
-                <li><a href="pricing.html">Pricing</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="reviews.html">Reviews</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4>Company</h4>
-              <ul>
-                <li><a href="aboutus.html">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4>Legal</h4>
-              <ul>
-                <li><a href="#">Privacy</a></li>
-                <li><a href="#">Terms</a></li>
-                <li><a href="#">Cookies</a></li>
-                <li><a href="#">Help</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="footer-bottom">
-            <p>© <span id="year"></span> BRYTON AND MASTON DESIGN © COPYRIGHT 2026</p>
-            <nav aria-label="Footer social links">
-              <a href="#">Twitter</a> · <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
-            </nav>
-          </div>
+    <!-- Mobile nav -->
+    <nav id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+      <a href="featuers.html" onclick="closeMobileNav()">Features</a>
+      <a href="gallery.html" onclick="closeMobileNav()">Gallery</a>
+      <a href="pricing.html" onclick="closeMobileNav()">Pricing</a>
+      <a href="reviews.html" onclick="closeMobileNav()">Reviews</a>
+      <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main id="main" tabindex="-1" class="container">
+    <section id="pricing" aria-labelledby="pricing-heading">
+      <h1 id="pricing-heading">Simple, transparent pricing</h1>
+      <p class="muted">No hidden fees. Cancel any time.</p>
+
+      <div class="pricing-grid" role="list">
+        <article class="pricing-card" aria-labelledby="p1" role="listitem">
+          <h2 id="p1">Free</h2>
+          <div class="price"><span class="amount">$0</span> <span class="period">/ mo</span></div>
+          <p class="muted small">Perfect for personal projects</p>
+          <ul class="pricing-features">
+            <li>3 projects</li>
+            <li>5 GB storage</li>
+            <li>Community support</li>
+          </ul>
+          <a class="btn pricing-cta outline" href="contact.html">Get started</a>
+        </article>
+
+        <article class="pricing-card featured" aria-labelledby="p2" role="listitem">
+          <span class="featured-badge">Most popular</span>
+          <h2 id="p2">Pro</h2>
+          <div class="price"><span class="amount">$12</span> <span class="period">/ mo</span></div>
+          <p class="muted small">For professionals &amp; freelancers</p>
+          <ul class="pricing-features">
+            <li>Unlimited projects</li>
+            <li>50 GB storage</li>
+            <li>Priority support</li>
+            <li>Custom domains</li>
+          </ul>
+          <a class="btn pricing-cta primary" href="contact.html">Start free trial</a>
+        </article>
+
+        <article class="pricing-card" aria-labelledby="p3" role="listitem">
+          <h2 id="p3">Business</h2>
+          <div class="price"><span class="amount">$39</span> <span class="period">/ mo</span></div>
+          <p class="muted small">Teams and scale</p>
+          <ul class="pricing-features">
+            <li>Unlimited everything</li>
+            <li>500 GB storage</li>
+            <li>SLA guarantee</li>
+            <li>SSO / SAML</li>
+            <li>Dedicated manager</li>
+          </ul>
+          <a class="btn pricing-cta outline" href="contact.html">Contact sales</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Acme</div>
+          <p class="footer-desc">A single-file HTML reference showcasing accessibility, responsive design, SEO best practices, and progressive enhancement.</p>
         </div>
-      </footer>
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="featuers.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> BRYTON AND MASTON DESIGN © COPYRIGHT 2026</p>
+        <nav aria-label="Footer social links" class="social-links">
+          <a href="#">Twitter</a> · <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var hamburger = document.getElementById('hamburger');
+      var mobileNav = document.getElementById('mobile-nav');
+
+      function toggleMobileNav(btn) {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        mobileNav.classList.toggle('open');
+        mobileNav.setAttribute('aria-hidden', String(expanded));
+      }
+      window.toggleMobileNav = toggleMobileNav;
+
+      function closeMobileNav() {
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+      }
+      window.closeMobileNav = closeMobileNav;
+
+      // wire hamburger
+      if (hamburger) hamburger.addEventListener('click', function () { toggleMobileNav(this); });
+
+      // set year
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>

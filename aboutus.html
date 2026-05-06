@@ -1,41 +1,31 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About us</title>
-    
-    <link rel="stylesheet" href="all.css">
-    <link rel="stylesheet" href="ALL.js">
-</head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About us — Acme</title>
+  <meta name="description" content="About Acme — learn how HTML works and why accessible, semantic markup matters." />
 
-<style>
-    footer{
-        bottom: 0;
-        left: 0;
-        right: 0;
-        position: static;
-    }
-    b{
-        color: blue
-    }
-</style>
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="aboutus.css">
+</head>
 <body>
-    
-  <!-- ── Header ── -->
-  <header role="banner">
-    <div class="header-inner">
-      <div style="display:flex;align-items:center;gap:1.25rem;">
-        <a class="brand" href="#" aria-label="Acme home">
-          <img
-            alt="Acme logo"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230055b3'/%3E%3Ctext x='50' y='65' font-size='52' fill='white' text-anchor='middle' font-family='Georgia,serif' font-style='italic'%3EA%3C/text%3E%3C/svg%3E"
-          >
-          <span>Acme</span>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- Header -->
+  <header role="banner" class="site-header">
+    <div class="header-inner container">
+      <div class="brand-and-nav">
+        <a class="brand" href="index.html" aria-label="Acme home">
+          <img alt="Acme logo"
+               src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230055b3'/%3E%3Ctext x='50' y='65' font-size='52' fill='white' text-anchor='middle' font-family='Georgia,serif' font-style='italic'%3EA%3C/text%3E%3C/svg%3E">
+          <span class="brand-text">Acme</span>
         </a>
-        <nav aria-label="Main navigation">
+
+        <nav aria-label="Main navigation" class="main-nav">
           <ul>
-            
+            <li><a href="index.html">Home</a></li>
             <li><a href="featuers.html">Features</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="pricing.html">Pricing</a></li>
@@ -45,28 +35,53 @@
         </nav>
       </div>
 
-      <div style="display:flex;align-items:center;gap:.6rem;">
-        <button class="hamburger secondary" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" onclick="toggleMobileNav(this)">☰ Menu</button>
-        <a href="contact.html" class="btn btn-primary" style="font-size:.88rem;padding:.5rem .95rem;border-radius:8px;">Get in touch</a>
+      <div class="header-actions">
+        <button id="hamburger" class="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+        <a href="contact.html" class="btn btn-primary">Get in touch</a>
       </div>
     </div>
 
-    <!-- Mobile nav drawer -->
-    <div id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">
+    <!-- Mobile nav -->
+    <nav id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
       <a href="featuers.html" onclick="closeMobileNav()">Features</a>
-      <a href="gallery.html"  onclick="closeMobileNav()">Gallery</a>
-      <a href="pricing.html"  onclick="closeMobileNav()">Pricing</a>
+      <a href="gallery.html" onclick="closeMobileNav()">Gallery</a>
+      <a href="pricing.html" onclick="closeMobileNav()">Pricing</a>
       <a href="reviews.html" onclick="closeMobileNav()">Reviews</a>
-      <a href="contact.html"  onclick="closeMobileNav()">Contact</a>
-    </div>
+      <a href="contact.html" onclick="closeMobileNav()">Contact</a>
+    </nav>
   </header>
- <H1>We are here to help in learing how HTML works.</H1>
- <b>You might ask yourself what HTML means?</b>
- <h2><B><I>HTML</I></B> means H:Hyper T:Text M:Markup L:Language</h2>
- <h2>After learning to use html, you will be able to make and design a website of your choise</h2>
-  
-  <!-- ── Footer ── -->
-  <footer role="contentinfo">
+
+  <!-- Main content -->
+  <main id="main" tabindex="-1" class="container">
+    <article class="about">
+      <h1>We are here to help you learn how HTML works</h1>
+
+      <p class="lead"><strong>You might ask yourself what HTML means?</strong></p>
+
+      <section class="definition" aria-labelledby="html-def">
+        <h2 id="html-def"><strong><em>HTML</em></strong> — what the letters mean</h2>
+        <p><strong>H</strong>: Hyper &nbsp; <strong>T</strong>: Text &nbsp; <strong>M</strong>: Markup &nbsp; <strong>L</strong>: Language</p>
+      </section>
+
+      <section class="why-learn" aria-labelledby="why-learn">
+        <h2 id="why-learn">Why learn HTML?</h2>
+        <p>After learning to use HTML, you'll be able to create and design a website of your choice. HTML is the foundation of the web — semantic markup improves accessibility, SEO, and maintainability.</p>
+      </section>
+
+      <section class="how-we-help" aria-labelledby="how-we-help">
+        <h2 id="how-we-help">How we help</h2>
+        <ul>
+          <li>Clear, semantic examples you can copy and adapt</li>
+          <li>Accessibility-first patterns and ARIA guidance</li>
+          <li>Responsive layouts and lightweight CSS</li>
+          <li>Progressive enhancement with minimal JavaScript</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
@@ -79,7 +94,7 @@
             <li><a href="featuers.html">Features</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="gallery.html">Reviews</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
           </ul>
         </div>
         <div>
@@ -101,14 +116,43 @@
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>© <span id="year"></span> BRYTON AND MASTON DESIGN © COPYRIGHT 2026</p>
-        <nav aria-label="Footer social links">
+        <nav aria-label="Footer social links" class="social-links">
           <a href="#">Twitter</a> · <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
         </nav>
       </div>
     </div>
   </footer>
 
+  <script>
+    (function () {
+      var hamburger = document.getElementById('hamburger');
+      var mobileNav = document.getElementById('mobile-nav');
+
+      function toggleMobileNav(btn) {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        mobileNav.classList.toggle('open');
+        mobileNav.setAttribute('aria-hidden', String(expanded));
+      }
+      window.toggleMobileNav = toggleMobileNav;
+
+      function closeMobileNav() {
+        if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+        if (mobileNav) {
+          mobileNav.classList.remove('open');
+          mobileNav.setAttribute('aria-hidden', 'true');
+        }
+      }
+      window.closeMobileNav = closeMobileNav;
+
+      if (hamburger) hamburger.addEventListener('click', function () { toggleMobileNav(this); });
+
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 </html>

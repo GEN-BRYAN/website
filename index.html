@@ -1,19 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
   <title>Acme — Modern, Accessible, Responsive Web Page</title>
-  <meta name="description" content="A single-file example HTML page demonstrating best practices: accessibility, responsiveness, SEO, performance, and interactivity.">
-  <meta name="keywords" content="HTML, Accessibility, Responsive, SEO, Example">
+  <meta name="description" content="A single-file example HTML page demonstrating best practices: accessibility, responsiveness, SEO, performance, and interactivity." />
+  <meta name="keywords" content="HTML, Accessibility, Responsive, SEO, Example" />
 
-  <meta property="og:title" content="Acme — Modern Web Page Example">
-  <meta property="og:description" content="A single-file example HTML page demonstrating best practices: accessibility, responsiveness, SEO, performance, and interactivity.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Acme+Preview">
-  <meta property="og:url" content="https://example.com/complete-webpage.html">
+  <meta property="og:title" content="Acme — Modern Web Page Example" />
+  <meta property="og:description" content="A single-file example HTML page demonstrating best practices: accessibility, responsiveness, SEO, performance, and interactivity." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Acme+Preview" />
+  <meta property="og:url" content="https://example.com/complete-webpage.html" />
 
   <script type="application/ld+json">
   {
@@ -27,13 +27,13 @@
 
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
 
-  <!-- Google Fonts: distinctive pairing -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="all.css">
-  <link rel="stylesheet" href="ALL.js">
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="index.css">
 </head>
 <body>
 
@@ -43,21 +43,21 @@
   <!-- Skip link for keyboard users -->
   <a href="#main" class="skip-link">Skip to main content</a>
 
-  <!-- ── Header ── -->
-  <header role="banner">
-    <div class="header-inner">
-      <div style="display:flex;align-items:center;gap:1.25rem;">
+  <!-- Header -->
+  <header role="banner" class="site-header">
+    <div class="header-inner container">
+      <div class="brand-and-nav">
         <a class="brand" href="#" aria-label="Acme home">
           <img
             alt="Acme logo"
             src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230055b3'/%3E%3Ctext x='50' y='65' font-size='52' fill='white' text-anchor='middle' font-family='Georgia,serif' font-style='italic'%3EA%3C/text%3E%3C/svg%3E"
           >
-          <span>Acme</span>
+          <span class="brand-text">Acme</span>
         </a>
-        <nav aria-label="Main navigation">
+
+        <nav aria-label="Main navigation" class="main-nav">
           <ul>
-            
-            <li><a href="featuers.html">Features</a></li>
+            <li><a href="features.html">Features</a></li>
             <li><a href="gallery.html">Gallery</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="reviews.html">Reviews</a></li>
@@ -66,15 +66,15 @@
         </nav>
       </div>
 
-      <div style="display:flex;align-items:center;gap:.6rem;">
-        <button class="hamburger secondary" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" onclick="toggleMobileNav(this)">☰ Menu</button>
-        <a href="contact.html" class="btn btn-primary" style="font-size:.88rem;padding:.5rem .95rem;border-radius:8px;">Get in touch</a>
+      <div class="header-actions">
+        <button id="hamburger" class="hamburger secondary" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">☰ Menu</button>
+        <a href="contact.html" class="btn btn-primary">Get in touch</a>
       </div>
     </div>
 
     <!-- Mobile nav drawer -->
-    <div id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation">
-      <a href="featuers.html" onclick="closeMobileNav()">Features</a>
+    <div id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+      <a href="features.html" onclick="closeMobileNav()">Features</a>
       <a href="gallery.html"  onclick="closeMobileNav()">Gallery</a>
       <a href="pricing.html"  onclick="closeMobileNav()">Pricing</a>
       <a href="reviews.html" onclick="closeMobileNav()">Reviews</a>
@@ -82,35 +82,37 @@
     </div>
   </header>
 
-  <!-- ── Main content ── -->
+  <!-- Main content -->
   <main id="main" tabindex="-1" class="container">
 
     <!-- Hero -->
     <section class="hero" aria-labelledby="hero-heading">
-      <div>
+      <div class="hero-content">
         <div class="hero-eyebrow">
           <span class="tag">New in 2025</span>
-          <span class="muted" style="font-size:.85rem;">Trusted by 10,000+ developers</span>
+          <span class="muted">Trusted by 10,000+ developers</span>
         </div>
+
         <h1 id="hero-heading">A modern, <em>accessible</em>, and responsive HTML template</h1>
         <p class="muted">This single-file example includes semantic markup, structured data, responsive layout, ARIA attributes, and lightweight JS for progressive enhancement. Copy, learn, and ship.</p>
+
         <div class="cta">
           <a href="contact.html" class="btn btn-primary">Start free</a>
-          <a href="featuers.html" class="link-arrow">Explore features →</a>
+          <a href="features.html" class="link-arrow">Explore features →</a>
         </div>
 
         <!-- Newsletter form -->
-        <form id="newsletter" onsubmit="subscribe(event)" novalidate style="margin-top:1.5rem;" aria-label="Newsletter signup">
+        <form id="newsletter" onsubmit="subscribe(event)" novalidate class="newsletter" aria-label="Newsletter signup">
           <div class="newsletter-form">
             <label for="email" class="sr-only">Email address</label>
-            <input id="email" name="email" type="email" placeholder="your@email.com" required aria-required="true" autocomplete="email" style="flex:1;min-width:180px;">
-            <button class="primary" type="submit" style="white-space:nowrap;">Subscribe</button>
+            <input id="email" name="email" type="email" placeholder="your@email.com" required aria-required="true" autocomplete="email">
+            <button class="btn primary" type="submit">Subscribe</button>
           </div>
-          <div id="newsletter-msg" role="status" aria-live="polite"></div>
+          <div id="newsletter-msg" role="status" aria-live="polite" class="newsletter-msg"></div>
         </form>
       </div>
 
-      <aside aria-label="Product stats preview">
+      <aside class="hero-aside" aria-label="Product stats preview">
         <div class="hero-card">
           <img
             src="https://picsum.photos/400/280?random=10"
@@ -119,7 +121,7 @@
             width="400" height="280"
           >
           <div class="hero-card-body">
-            <p style="font-size:.88rem;font-weight:600;margin-bottom:0;">Platform at a glance</p>
+            <p class="card-title">Platform at a glance</p>
             <div class="stat-row">
               <div class="stat"><strong>10k+</strong><span>Users</span></div>
               <div class="stat"><strong>99.9%</strong><span>Uptime</span></div>
@@ -132,21 +134,20 @@
 
     <!-- Trusted-by strip -->
     <div class="trusted" aria-label="Trusted by leading companies">
-      <p>Trusted by teams at</p>
-      <div class="logo-row">
-        <span class="logo-pill">Vercel</span>
-        <span class="logo-pill">Stripe</span>
-        <span class="logo-pill">Linear</span>
-        <span class="logo-pill">Notion</span>
-        <span class="logo-pill">GitHub</span>
+      <p class="trusted-text">Trusted by teams at</p>
+      <div class="logo-row" role="list">
+        <span class="logo-pill" role="listitem">Vercel</span>
+        <span class="logo-pill" role="listitem">Stripe</span>
+        <span class="logo-pill" role="listitem">Linear</span>
+        <span class="logo-pill" role="listitem">Notion</span>
+        <span class="logo-pill" role="listitem">GitHub</span>
       </div>
     </div>
 
-    
-   
-   
-  <!-- ── Footer ── -->
-  <footer role="contentinfo">
+  </main>
+
+  <!-- Footer -->
+  <footer role="contentinfo" class="site-footer">
     <div class="container">
       <div class="footer-grid">
         <div>
@@ -156,16 +157,16 @@
         <div>
           <h4>Product</h4>
           <ul>
-            <li><a href="featuers.html">Features</a></li>
+            <li><a href="features.html">Features</a></li>
             <li><a href="pricing.html">Pricing</a></li>
             <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="gallery.html">Reviews</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
           </ul>
         </div>
         <div>
           <h4>Company</h4>
           <ul>
-            <li><a href="aboutus.html">About</a></li>
+            <li><a href="about.html">About</a></li>
             <li><a href="#">Blog</a></li>
             <li><a href="#">Careers</a></li>
             <li><a href="contact.html">Contact</a></li>
@@ -181,14 +182,68 @@
           </ul>
         </div>
       </div>
+
       <div class="footer-bottom">
         <p>© <span id="year"></span> BRYTON AND MASTON DESIGN © COPYRIGHT 2026</p>
-        <nav aria-label="Footer social links">
+        <nav aria-label="Footer social links" class="social-links">
           <a href="#">Twitter</a> · <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
         </nav>
       </div>
     </div>
   </footer>
 
-  </body>
+  <script>
+    // Small progressive enhancement scripts (kept minimal and accessible)
+
+    // Set current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobile-nav');
+
+    function toggleMobileNav(btn) {
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!expanded));
+      mobileNav.classList.toggle('open');
+      mobileNav.setAttribute('aria-hidden', String(expanded));
+    }
+
+    function closeMobileNav() {
+      hamburger.setAttribute('aria-expanded', 'false');
+      mobileNav.classList.remove('open');
+      mobileNav.setAttribute('aria-hidden', 'true');
+    }
+
+    hamburger.addEventListener('click', () => toggleMobileNav(hamburger));
+
+    // Newsletter subscribe (simple client-side validation)
+    function subscribe(e) {
+      e.preventDefault();
+      const email = document.getElementById('email');
+      const msg = document.getElementById('newsletter-msg');
+      if (!email.checkValidity()) {
+        msg.textContent = 'Please enter a valid email address.';
+        msg.classList.add('error');
+        email.focus();
+        return;
+      }
+      msg.textContent = 'Thanks — check your inbox for a confirmation email.';
+      msg.classList.remove('error');
+      email.value = '';
+    }
+
+    // Scroll progress bar
+    const progressBar = document.getElementById('progress-bar');
+    function updateProgress() {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / (docHeight || 1)) * 100;
+      progressBar.style.width = Math.min(100, Math.max(0, scrolled)) + '%';
+      progressBar.setAttribute('aria-hidden', scrolled === 0 ? 'true' : 'false');
+    }
+    window.addEventListener('scroll', updateProgress, { passive: true });
+    window.addEventListener('resize', updateProgress);
+    updateProgress();
+  </script>
+</body>
 </html>

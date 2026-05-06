@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Acme — Features</title>
+
+  <!-- External styles (features.css) -->
+  <link rel="stylesheet" href="features.css">
+</head>
+
+<body>
+  <!-- ── Header ── -->
+  <header role="banner">
+    <div class="header-inner">
+      <div style="display:flex;align-items:center;gap:1.25rem;">
+        <a class="brand" href="#" aria-label="Acme home">
+          <img
+            alt="Acme logo"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='18' fill='%230055b3'/%3E%3Ctext x='50' y='65' font-size='52' fill='white' text-anchor='middle' font-family='Georgia,serif' font-style='italic'%3EA%3C/text%3E%3C/svg%3E"
+          >
+          <span>Acme</span>
+        </a>
+
+        <nav aria-label="Main navigation">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:.6rem;">
+        <button class="hamburger secondary" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav" onclick="toggleMobileNav(this)">☰ Menu</button>
+        <a href="contact.html" class="btn btn-primary" style="font-size:.88rem;padding:.5rem .95rem;border-radius:8px;">Get in touch</a>
+      </div>
+    </div>
+
+    <!-- Mobile nav drawer -->
+    <div id="mobile-nav" class="mobile-nav" role="navigation" aria-label="Mobile navigation" aria-hidden="true">
+      <a href="featuers.html" onclick="closeMobileNav()">Features</a>
+      <a href="gallery.html"  onclick="closeMobileNav()">Gallery</a>
+      <a href="pricing.html"  onclick="closeMobileNav()">Pricing</a>
+      <a href="reviews.html" onclick="closeMobileNav()">Reviews</a>
+      <a href="contact.html"  onclick="closeMobileNav()">Contact</a>
+    </div>
+  </header>
+
+  <!-- Features -->
+  <main id="main" tabindex="-1">
+    <section id="features" aria-labelledby="features-heading" class="container">
+      <h2 id="features-heading">Key features</h2>
+      <p class="muted">Picked to illustrate the characteristics of a robust, production-ready web page.</p>
+
+      <div class="features" role="list">
+        <article class="card" aria-labelledby="f1" role="listitem">
+          <div class="card-icon" aria-hidden="true">📐</div>
+          <h3 id="f1">Semantic HTML</h3>
+          <p class="muted">Clean use of header, main, nav, section, article and footer improves clarity for browsers and assistive technologies.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f2" role="listitem">
+          <div class="card-icon" aria-hidden="true">♿</div>
+          <h3 id="f2">Accessibility</h3>
+          <p class="muted">Keyboard focus management, ARIA labels, sufficient contrast ratios, and skip-links help users of all abilities.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f3" role="listitem">
+          <div class="card-icon" aria-hidden="true">⚡</div>
+          <h3 id="f3">Performance</h3>
+          <p class="muted">Lazy-loaded images, minimal CSS, progressive enhancement, and a scroll progress indicator reduce load time.</p>
+        </article>
+
+        <article class="card" aria-labelledby="f4" role="listitem">
+          <div class="card-icon" aria-hidden="true">🔍</div>
+          <h3 id="f4">SEO &amp; Social</h3>
+          <p class="muted">Meta tags, Open Graph, and JSON-LD structured data improve search ranking and social card previews.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">Acme</div>
+          <p class="footer-desc">A single-file HTML reference showcasing accessibility, responsive design, SEO best practices, and progressive enhancement.</p>
+        </div>
+
+        <div>
+          <h4>Product</h4>
+          <ul>
+            <li><a href="features.html">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="reviews.html">Reviews</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="aboutus.html">About</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Cookies</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> BRYTON AND MASTON DESIGN © COPYRIGHT 2026</p>
+        <nav aria-label="Footer social links">
+          <a href="#">Twitter</a> · <a href="#">GitHub</a> · <a href="#">LinkedIn</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Minimal progressive enhancement for mobile nav and year
+    (function () {
+      var hamburger = document.querySelector('.hamburger');
+      var mobileNav = document.getElementById('mobile-nav');
+
+      function toggleMobileNav(btn) {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        mobileNav.classList.toggle('open');
+        mobileNav.setAttribute('aria-hidden', String(expanded));
+      }
+      window.toggleMobileNav = toggleMobileNav;
+
+      function closeMobileNav() {
+        hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav.classList.remove('open');
+        mobileNav.setAttribute('aria-hidden', 'true');
+      }
+      window.closeMobileNav = closeMobileNav;
+
+      // set year
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    })();
+  </script>
+</body>
+</html>
